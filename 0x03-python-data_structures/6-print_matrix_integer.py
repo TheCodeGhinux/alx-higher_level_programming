@@ -10,4 +10,4 @@ def print_matrix_integer(matrix=[[]]):
             if b != y - 1:
                 print(" ", end="")
 
-        print(" ")
+        print("")
