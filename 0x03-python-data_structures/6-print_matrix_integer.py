@@ -1,4 +1,15 @@
 #!/usr/bin/python3
 def print_matrix_integer(matrix=[[]]):
-    for row in matrix:
-        print(' '.join(str(num) for num in row))
+    if not matrix:
+        return
+
+    x = len(matrix)
+    y = len(matrix[0])
+
+    for a in range(x):
+        row_str = ""
+        for b in range(y):
+            row += "{:d}".format(matrix[a][b])
+            if b != cols - 1:
+                row += " "
+        print(row)
