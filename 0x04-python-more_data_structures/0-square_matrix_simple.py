@@ -4,5 +4,5 @@ def square_matrix_simple(matrix=[]):
     for a in range(len(matrix)):
         for b in range(len(matrix[a])):
             new_mat[a][b] = matrix[a][b] ** 2
-    
+
     return new_mat
