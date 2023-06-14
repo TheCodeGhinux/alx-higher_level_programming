@@ -23,5 +23,5 @@ def roman_to_int(roman_string):
             num += dic[roman_string[a]] * -1
         else:
             num += dic[roman_string[a]]
-    
+
     return num
