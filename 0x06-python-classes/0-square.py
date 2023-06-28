@@ -2,5 +2,5 @@
 "To define a square class"
 
 class Square:
-    
+    "Square class"
     pass
