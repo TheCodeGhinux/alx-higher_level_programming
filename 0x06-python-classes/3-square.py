@@ -3,12 +3,14 @@
 
 
 class Square:
+    "Square class to represent a square"
+
     def __init__(self, size=0):
         """Initialize a Square object with a given size.
-        
+
         Args:
             size (int): The size of the square (default: 0).
-        
+
         Raises:
             TypeError: If size is not an integer.
             ValueError: If size is less than 0.
@@ -24,7 +26,7 @@ class Square:
     def size(self, value):
         """Set the size of the square.
         Args: The size of value to be set
-        
+
         Raises:
             TypeError: If value is not an integer.
             ValueError: If value is less than 0.

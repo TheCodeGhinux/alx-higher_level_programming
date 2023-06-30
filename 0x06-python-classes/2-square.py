@@ -4,7 +4,7 @@
 
 class Square:
     """Initialize a Square object with a given size.
-        
+
         Args:
             size (int): The size of the square (default: 0).
     """
