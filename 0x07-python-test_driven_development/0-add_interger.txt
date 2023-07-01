@@ -1,0 +1,21 @@
+Test Cases for add_integer Function
+
+Test Case 1:
+Input: 10, 5
+Expected Output: 15
+
+Test Case 2:
+Input: 7, 3.5
+Expected Output: 10
+
+Test Case 3:
+Input: 2.5, 1.5
+Expected Output: 4
+
+Test Case 4:
+Input: 5 (Default value for b)
+Expected Output: 103
+
+Test Case 5:
+Input: "10", 5
+Expected Output: TypeError, "a must be an integer or b must be an integer"
