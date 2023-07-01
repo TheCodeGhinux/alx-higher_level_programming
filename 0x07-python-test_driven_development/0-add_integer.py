@@ -2,14 +2,14 @@
 def add_integer(a, b=98):
     """
     Adds two integers and returns the sum.
-    
+
     Parameters:
     a (int or float): First integer or float.
     b (int or float): Second integer or float. Default value is 98.
-    
+
     Returns:
     int: The addition of a and b.
-    
+
     Raises:
     TypeError: If a or b is not an integer or float.
     """
