@@ -14,9 +14,6 @@ def write_file(filename="", text=""):
     :return: The number of characters written to the file.
              Returns -1 on erroe.
     """
-    try:
-        with open(filename, "w", encoding="utf-8") as f:
-            f.write(text)
+    with open(filename, mode="w", encoding="utf-8") as f:
+        if f.write(text):
             return len(text)
-    except IOError:
-        return -1
