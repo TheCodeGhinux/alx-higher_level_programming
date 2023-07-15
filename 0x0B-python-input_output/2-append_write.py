@@ -1,7 +1,6 @@
 #!/usr/bin/python3
 """
-Function that that appends a string
-to a text file (UTF8)
+ Append to a file module
 """
 
 
