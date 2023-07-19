@@ -93,7 +93,8 @@ class Rectangle:
 
         shape = []
         for i in range(self.rec_height):
-            [shape.append(str(self.print_symbol)) for j in range(self.rec_width)]
+            [shape.append(str(self.print_symbol))
+             for j in range(self.rec_width)]
             if i != self.rec_height - 1:
                 shape.append("\n")
         return ("".join(shape))
