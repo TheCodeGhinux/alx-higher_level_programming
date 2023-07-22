@@ -127,8 +127,8 @@ class Base:
         """Return a list of classes from a CSV file.
 
         Returns:
-            a list of instantiated classes. 
-            Otherwise - an empty list. 
+            a list of instantiated classes.
+            Otherwise - an empty list.
         """
         filename = cls.__name__ + ".csv"
         try:
