@@ -7,18 +7,18 @@
 import urllib.request
 import sys
 
-""" Check if a URL is provided as an argument """
+""" Checking if URL is inputed as argument """
 if len(sys.argv) != 2:
     print("Usage: python 1-hbtn_header.py <URL>")
     sys.exit(1)
 
-url = sys.argv[1]
+input_url = sys.argv[1]
 
 try:
-    with urllib.request.urlopen(url) as response:
-        """ Get the value of the X-Request-Id header"""
-        x_request_id = response.getheader('X-Request-Id')
-        if x_request_id is not None:
-            print(x_request_id)
+    with urllib.request.urlopen(input_url) as response:
+        """ Get the value of the header"""
+        req_id = response.getheader('X-Request-Id')
+        if req_id is not None:
+            print(req_id)
 except Exception as e:
     print(f"Error: {e}")
