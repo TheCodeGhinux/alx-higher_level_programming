@@ -1,28 +1,35 @@
 #!/usr/bin/pythn3
+
+"""
+    Python script that takes in a url, sends a
+    request to the url and displays the value
+    of the variable X-Request-Id in the response header
+"""
+
 import requests
 import sys
 
-# Check if the correct number of arguments is provided
+# Check for the correct number of arguments
 if len(sys.argv) != 3:
-    print("Usage: python script_name.py <URL> <email>")
+    print("Usage: python 6-post_email.py <input_url> <input_email>")
     sys.exit(1)
 
-# Extract URL and email from command-line arguments
-url = sys.argv[1]
-email = sys.argv[2]
+# Get url and email from command-line arguments
+input_url = sys.argv[1]
+input_email = sys.argv[2]
 
 # Create a dictionary with the email parameter
-data = {"email": email}
+data = {"email": input_email}
 
 try:
-    # Send a POST request with the email parameter
-    response = requests.post(url, data=data)
+    # Send a POST request with the email
+    res = requests.post(input_url, data=data)
 
     # Check if the request was successful (status code 200)
-    if response.status_code == 200:
-        # Display the response body
-        print(response.text)
+    if res.status_code == 200:
+        # Show the response body
+        print(res.text)
     else:
-        print(f"Error: Received status code {response.status_code}")
-except requests.exceptions.RequestException as e:
-    print(f"Error: {e}")
+        print(f"Error: Received status code {res.status_code}")
+except requests.exceptions.RequestException as err:
+    print(f"Error: {err}")
