@@ -10,4 +10,3 @@ try:
         print(f"Error code: {res.status_code}")
     else:
         print(res.text)
-
