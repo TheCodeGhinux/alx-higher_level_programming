@@ -11,6 +11,6 @@ if __name__ == '__main__':
     input_url = sys.argv[1]
     res = requests.get(input_url)
     if res.status_code > 400:
-         print(f"Error code: {res.status_code}")
+        print(f"Error code: {res.status_code}")
     else:
         print(res.text)
