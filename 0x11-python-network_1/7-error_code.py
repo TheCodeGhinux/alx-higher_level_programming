@@ -1,20 +1,25 @@
 #!/usr/bin/python3
+
+"""
+     Python script that takes in a url, sends a request
+     to the url and displays the body of the response.
+"""
 import requests
 import sys
 
-# Extract URL from command-line arguments
-url = sys.argv[1]
+# Get url from command-line arguments
+input_url = sys.argv[1]
 
 try:
-    # Send a GET request to the URL
-    response = requests.get(url)
+    # Send a GET request to the url
+    res = requests.get(input_url)
 
-    # Display the response body
-    print(response.text)
+    # Display the res body
+    print(res.text)
 
-    # Check if the HTTP status code is greater than or equal to 400
-    if response.status_code >= 400:
-        print(f"Error code: {response.status_code}")
+    # Check the HTTP status code
+    if res.status_code >= 400:
+        print(f"Error code: {res.status_code}")
 
-except requests.exceptions.RequestException as e:
-    print(f"Error: {e}")
+except requests.exceptions.RequestException as err:
+    print(f"Error: {err}")
