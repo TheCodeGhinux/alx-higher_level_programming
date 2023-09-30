@@ -43,7 +43,7 @@ try:
 
     # Handle error if response is not available
     else:
-        print("Not a valid JSON")
+        print("No result")
 
 except requests.exceptions.RequestException as err:
     print(f"Error: {err}")
