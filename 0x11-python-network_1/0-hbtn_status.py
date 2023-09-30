@@ -11,7 +11,10 @@ input_url = 'https://alx-intranet.hbtn.io/status'
 try:
     with urllib.request.urlopen(input_url) as response:
         html_res = response.read()
-        print(f"""Body response:\n\t- type: {type(html_res)}
-        \n\t- content: {html_res.decode('utf-8')}""")
+        html_type = type(html)
+        print("Body response:")
+        print("\t- type: {}".format(html_type))
+        print("\t- content: {}".format(html_res))
+        print("\t- utf8 content: {}".format(html_res.decode('utf-8')))
 except Exception as e:
     print(f"Error: {e}")
