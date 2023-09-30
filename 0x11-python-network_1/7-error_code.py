@@ -1,8 +1,14 @@
 #!/usr/bin/python3
 
 """
-     Python script that takes in a url, sends a request
-     to the url and displays the body of the response.
+Python script that takes in a URL, sends a GET request
+to the URL, and displays the body of the response.
+
+Usage:
+    python script.py <url>
+
+Arguments:
+    <url>: The URL to send the GET request to.
 """
 
 import requests
