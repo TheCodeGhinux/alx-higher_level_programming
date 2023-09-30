@@ -11,12 +11,12 @@ import sys
 """ Extract the letter from command-line arguments,
 or set it to an empty string if not provided"""
 if len(sys.argv) > 1:
-    letter = sys.argv[1]
+    q = sys.argv[1]
 else:
-    letter = ""
+    q = ""
 
 # Create a dictionary with the letter parameter
-data = {"q": letter}
+data = {"q": q}
 
 # input url to send the POST request
 input_url = "http://0.0.0.0:5000/search_user"
