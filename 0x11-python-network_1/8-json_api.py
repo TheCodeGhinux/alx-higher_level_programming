@@ -37,12 +37,8 @@ try:
         else:
             print("Not a valid JSON")
 
-    # Handle empty case
+    # Handle the case where the JSON is empty
     elif not res.text:
-        print("No result")
-
-    # Handle error if response is not available
-    else:
         print("No result")
 
 except requests.exceptions.RequestException as err:
