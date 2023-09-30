@@ -1,7 +1,5 @@
 #!/usr/bin/python3
-
 """Python script that sends a web req with error handling"""
-
 import requests
 import sys
 
