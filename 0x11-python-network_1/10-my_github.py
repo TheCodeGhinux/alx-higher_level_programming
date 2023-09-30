@@ -1,33 +1,39 @@
 #!/usr/bin/python3
+
+"""
+     Python script that takes your GitHub credentials
+     (username and password) and uses the GitHub API to display your id
+"""
+
 import requests
 import sys
 
-# Extract the username and personal access token (PAT) from command-line arguments
-username = sys.argv[1]
-pat = sys.argv[2]
+""" Extract the username and personal access token
+from command-line arguments"""
+usr_name = sys.argv[1]
+token = sys.argv[2]
 
-# Construct the URL for the GitHub API to get user information
-url = f"https://api.github.com/user"
+# input url for the GitHub API to get user info
+input_url = f"https://api.github.com/user"
 
-# Set up Basic Authentication with the PAT as the password
-auth = (username, pat)
+# Set up Basic Authentication with the token as the password
+auth = (usr_name, token)
 
 try:
     # Send a GET request to the GitHub API
-    response = requests.get(url, auth=auth)
+    res = requests.get(input_url, auth=auth)
 
     # Check if the request was successful (status code 200)
-    if response.status_code == 200:
-        # Parse the response JSON
-        user_data = response.json()
+    if res.status_code == 200:
+        user_data = res.json()
 
         # Display the user ID
         user_id = user_data.get("id")
         print(f"Your GitHub user ID is: {user_id}")
 
-    # Handle the case where the request fails
+    # Handle error on failure
     else:
-        print(f"Error: Received status code {response.status_code}")
+        print(f"Error: Received status code {res.status_code}")
 
-except requests.exceptions.RequestException as e:
-    print(f"Error: {e}")
+except requests.exceptions.RequestException as err:
+    print(f"Error: {err}")
