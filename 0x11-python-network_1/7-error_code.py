@@ -4,10 +4,9 @@
 import requests
 import sys
 
-try:
-    res = requests.get(sys.argv[1])
-    if res.status_code >= 400:
-        print(f"Error code: {res.status_code}")
+if __name__ == '__main__':
+    response = requests.get(sys.argv[1])
+    if response.status_code > 400:
+        print("Error code: {}".format(response.status_code))
     else:
-        print(res.text)
-        
+        print(response.text)
