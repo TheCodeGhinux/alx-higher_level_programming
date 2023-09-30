@@ -9,7 +9,7 @@ import requests
 import sys
 
 """
-    Extract the repo name and owner 
+    Extract the repo name and owner
     name from command-line arguments
 """
 repo_name = sys.argv[1]
