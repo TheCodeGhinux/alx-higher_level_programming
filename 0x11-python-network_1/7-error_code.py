@@ -4,7 +4,6 @@
 import requests
 import sys
 
-
 try:
     res = requests.get(sys.argv[1])
     if res.status_code >= 400:
