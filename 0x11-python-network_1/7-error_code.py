@@ -4,6 +4,7 @@
      Python script that takes in a url, sends a request
      to the url and displays the body of the response.
 """
+
 import requests
 import sys
 
