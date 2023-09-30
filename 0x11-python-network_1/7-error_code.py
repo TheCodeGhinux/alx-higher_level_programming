@@ -1,4 +1,5 @@
 #!/usr/bin/python3
+
 """Python script that sends a web req with error handling"""
 
 import requests
@@ -9,4 +10,7 @@ try:
     if res.status_code > 400:
         print(f"Error code: {res.status_code}")
     else:
-        print(response.text)
+        print(res.text)
+
+except requests.exceptions.RequestException as err:
+    print(f"Error: {err}")
