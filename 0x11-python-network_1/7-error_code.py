@@ -6,7 +6,6 @@
 import requests
 import sys
 
-
 if __name__ == '__main__':
     # Get URL from command-line arguments
     input_url = sys.argv[1]
