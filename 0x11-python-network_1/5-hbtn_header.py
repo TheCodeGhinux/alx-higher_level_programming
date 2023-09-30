@@ -26,6 +26,6 @@ try:
     if x_request_id is not None:
         print(x_request_id)
     else:
-        print("X-Request-Id header not found in the response.")
+        print("None")
 except requests.exceptions.RequestException as err:
     print(f"Error: {err}")
