@@ -35,7 +35,7 @@ try:
             user_name = res_json["name"]
             print(f"[{user_id}] {user_name}")
         else:
-            print("Not a valid JSON")
+            print("No result")
 
     # Handle empty case
     elif not res.text:
