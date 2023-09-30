@@ -11,7 +11,7 @@ input_url = 'https://alx-intranet.hbtn.io/status'
 try:
     with urllib.request.urlopen(input_url) as response:
         html_res = response.read()
-        html_type = type(html)
+        html_type = type(html_res)
         print("Body response:")
         print("\t- type: {}".format(html_type))
         print("\t- content: {}".format(html_res))
