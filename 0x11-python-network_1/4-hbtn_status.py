@@ -5,13 +5,14 @@
 
 import requests
 
-url = 'https://alx-intranet.hbtn.io/status'
+# Input url
+input_url = 'https://alx-intranet.hbtn.io/status'
 
 try:
-    response = requests.get(url)
-    response.raise_for_status()
+    res = requests.get(input_url)
+    res.raise_for_status()
 
     # Display the response body with tabulation
-    print(f"Body response:\n\t- type: {type(response.text)}\n\t- content: {response.text}")
-except requests.exceptions.RequestException as e:
-    print(f"Error: {e}")
+    print(f"Body res:\n\t- type: {type(res.text)}\n\t- content: {res.text}")
+except requests.exceptions.RequestException as err:
+    print(f"Error: {err}")
