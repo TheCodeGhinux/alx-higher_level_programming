@@ -11,14 +11,17 @@ if __name__ == '__main__':
     # Define the URL for the POST request
     url = "http://0.0.0.0:5000/search_user"
 
-    # Create a dictionary with the letter parameter
+    # Extract the letter from command-line arguments or set it to an empty string if not provided
     if len(sys.argv) < 2:
-        search = {'q': '""'}
+        q = ""
     else:
-        search = {'q': sys.argv[1]}
+        q = sys.argv[1]
+
+    # Create a dictionary with the 'q' parameter
+    search = {'q': q}
 
     # Send the POST request
-    req = requests.post(url, search)
+    req = requests.post(url, data=search)
 
     try:
         # Parse the JSON response
