@@ -39,7 +39,7 @@ try:
 
     # Handle empty case
     elif not res.text:
-        print("Not a valid JSON")
+        print("No result")
 
     # Handle error if response is not available
     else:
