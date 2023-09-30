@@ -35,11 +35,11 @@ try:
             user_name = res_json["name"]
             print(f"[{user_id}] {user_name}")
         else:
-            print("No result")
+            print("Not a vaild json")
 
     # Handle empty case
     elif not res.text:
-        print("No result")
+        print("Not a vaild json")
 
     # Handle error if response is not available
     else:
