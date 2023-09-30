@@ -25,7 +25,6 @@ try:
 
     if x_request_id is not None:
         print(x_request_id)
-    else:
-        print("None")
+
 except requests.exceptions.RequestException as err:
     print(f"Error: {err}")
