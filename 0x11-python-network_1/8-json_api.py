@@ -8,38 +8,28 @@
 import requests
 import sys
 
+# input url to send the POST request
+url = "http://0.0.0.0:5000/search_user"
+
 """ Extract the letter from command-line arguments,
 or set it to an empty string if not provided"""
-if len(sys.argv) > 1:
-    q = sys.argv[1]
+if len(sys.argv) < 2:
+    search = {'q': '""'}
 else:
-    q = ""
+    search = {'q': sys.argv[1]}
 
-# Create a dictionary with the letter parameter
-data = {"q": q}
-
-# input url to send the POST request
-input_url = "http://0.0.0.0:5000/search_user"
+req = requests.post(url, search)
 
 try:
-    # Send a POST request with the letter parameter
-    res = requests.post(input_url, data=data)
+    search = req.json()
+except ValueError:
+    print("Not a valid JSON")
+else:
+    if isinstance(search, list) and len(search) < 1:
+        print('No result')
+    else:
+        print(f"[{user['id']}] {user['name']}")
 
-    # Check if the response contains valid JSON and is not empty
-    if res.headers.get("content-type") == "application/json" and res.text:
-        res_json = res.json()
 
-        # Check for the JSON 'id' and 'name' keys
-        if "id" in res_json and "name" in res_json:
-            user_id = res_json["id"]
-            user_name = res_json["name"]
-            print(f"[{user_id}] {user_name}")
-        else:
-            print("Not a valid JSON")
 
-    # Handle the case where the JSON is empty
-    elif not res.text:
-        print("No result")
 
-except requests.exceptions.RequestException as err:
-    print(f"Error: {err}")
