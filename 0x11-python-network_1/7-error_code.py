@@ -1,15 +1,6 @@
 #!/usr/bin/python3
 
-"""
-Python script that takes in a URL, sends a GET request
-to the URL, and displays the body of the response.
-
-Usage:
-    python script.py <url>
-
-Arguments:
-    <url>: The URL to send the GET request to.
-"""
+"""Python script that send a web req"""
 
 import requests
 import sys
