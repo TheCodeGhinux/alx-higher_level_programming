@@ -18,7 +18,7 @@ if __name__ == "__main__":
     """
 
     username, password, database = sys.argv[1], sys.argv[2], sys.argv[3]
-    
+
     """ Connect the db server"""
     db = MySQLdb.connect(
         host="localhost",
@@ -30,7 +30,7 @@ if __name__ == "__main__":
     )
     cursor = db.cursor()
     cursor.execute("SELECT * FROM `states` ORDER BY `id`")
-    
+
     """Print the state"""
     [print(state) for state in cursor.fetchall() if state[1][0] == "N"]
 
