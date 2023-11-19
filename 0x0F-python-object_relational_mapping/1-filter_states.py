@@ -33,4 +33,3 @@ if __name__ == "__main__":
 
     """Print the state"""
     [print(state) for state in cursor.fetchall() if state[1][0] == "N"]
-
