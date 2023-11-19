@@ -44,4 +44,3 @@ if __name__ == "__main__":
     """Close the cursor and database connection"""
     cursor.close()
     db.close()
-
