@@ -17,9 +17,9 @@ from model_state import State, Base
 
 if __name__ == "__main__":
     username, password, database, state_name = sys.argv[1:5]
-    engine = create_engine("mysql+mysqldb://{}:{}@localhost/{}"
-                          .format(username, password, database),
-                          pool_pre_ping=True)
+    engine = create_engine("mysql+mysqldb://{}:{}@localhost:3306/{}"
+                           .format(username, password, database),
+                           pool_pre_ping=True)
     """Bind the engine to the Base class"""
     Base.metadata.create_all(engine)
 
