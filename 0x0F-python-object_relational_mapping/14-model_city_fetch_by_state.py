@@ -30,4 +30,4 @@ if __name__ == "__main__":
                   .filter(City.state_id == State.id) \
                   .order_by(City.id)
     for city, state in data:
-      print("{}: ({}) {}".format(state.name, city.id, city.name))
+          print("{}: ({}) {}".format(state.name, city.id, city.name))
