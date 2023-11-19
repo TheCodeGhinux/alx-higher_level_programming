@@ -34,7 +34,7 @@ if __name__ == "__main__":
                 INNER JOIN `states` as `s` \
                 ON `c`.`state_id` = `s`.`id` \
                 ORDER BY `c`.`id`")
-    
+
     """Print results"""
     for city in cursor.fetchall():
         print(city)
