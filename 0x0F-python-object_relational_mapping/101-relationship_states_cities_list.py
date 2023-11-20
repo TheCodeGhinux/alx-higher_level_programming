@@ -27,7 +27,10 @@ if __name__ == "__main__":
     Session = sessionmaker(bind=engine)
     session = Session()
 
-for state in session.query(State).order_by(State.id):
-    print("{}: {}".format(state.id, state.name))
-    for city in state.cities:
-        print("    {}: {}".format(city.id, city.name))
+    # Use a single query to retrieve states and cities with relationship
+    data = session.query(State).order_by(State.id).all()
+
+    for state in data:
+        print("{}: {}".format(state.id, state.name))
+        for city in state.cities:
+            print("    {}: {}".format(city.id, city.name))
