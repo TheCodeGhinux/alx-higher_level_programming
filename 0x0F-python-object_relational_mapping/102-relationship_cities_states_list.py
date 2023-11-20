@@ -30,4 +30,3 @@ if __name__ == "__main__":
 
     for city in data:
         print("{}: {} -> {}".format(city.id, city.name, city.state.name))
-    session.close()
