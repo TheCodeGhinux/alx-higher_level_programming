@@ -27,8 +27,9 @@ if __name__ == "__main__":
     session = Session()
 
     """Filter and delete the states directly in the query"""
-    states_to_delete = session.query(State).filter(State.name.like("%a%")).all()
-    for state in states_to_delete:
+    delete_state = session.query(State).filter(State.name.like("%a%"))
+    for state in delete_state:
         session.delete(state)
 
     session.commit()
+    session.close()
