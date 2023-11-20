@@ -13,6 +13,7 @@ from sqlalchemy.ext.declarative import declarative_base
 # Create a declarative base instance
 Base = declarative_base()
 
+
 class City(Base):
     """
     Class representing a City in the SQL database.
