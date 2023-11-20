@@ -1,6 +1,8 @@
 #!/usr/bin/python3
+
 """
-Script that changes the name of a State object
+Script that deletes all State objects with
+a name containing the letter a
 from the database hbtn_0e_6_usa
 
 args: <mysql username> /
@@ -24,12 +26,9 @@ if __name__ == "__main__":
     Session = sessionmaker(bind=engine)
     session = Session()
 
-    """Fetch the State with id = 2"""
-    update_state = session.query(State).filter(State.id == 2).first()
+    """Filter and delete the states directly in the query"""
+    states_to_delete = session.query(State).filter(State.name.like("%a%")).all()
+    for state in states_to_delete:
+        session.delete(state)
 
-    """Check if the state exists and change name"""
-    if state_to_update:
-        update_state.name = 'New Mexico'
-        session.commit()
-    else:
-        print("State with id = 2 not found.")
+    session.commit()
