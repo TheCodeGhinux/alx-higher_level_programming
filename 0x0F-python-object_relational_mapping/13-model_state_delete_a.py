@@ -24,12 +24,11 @@ if __name__ == "__main__":
     Session = sessionmaker(bind=engine)
     session = Session()
 
-    # Fetch the State with id = 2
+    """Fetch the State with id = 2"""
     update_state = session.query(State).filter(State.id == 2).first()
 
-    # Check if the state exists
+    """Check if the state exists and change name"""
     if state_to_update:
-        # Change the name to 'New Mexico'
         update_state.name = 'New Mexico'
         session.commit()
     else:
