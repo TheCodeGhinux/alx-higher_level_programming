@@ -26,8 +26,8 @@ if __name__ == "__main__":
     Session = sessionmaker(bind=engine)
     session = Session()
 
-    data = session.query(City).order_by(City.id).all():
+    data = session.query(City).order_by(City.id).all()
 
     for city in data:
-          print("{}: {} -> {}".format(city.id, city.name, city.state.name))
+        print("{}: {} -> {}".format(city.id, city.name, city.state.name))
     session.close()
