@@ -1,25 +1,27 @@
 #!/usr/bin/python3
 """
 Class definition of a City.
-python file that contains the class definition
-of a City and an instance Base = declarative_base().
+A Python file containing the class definition
+of a City and an instance `Base = declarative_base()`.
 
-Inherits from SQLAlchemy Base and connects to the Sql table.
+Inherits from SQLAlchemy `Base` and connects to the SQL table.
 """
 
 from sqlalchemy import Column, Integer, String, ForeignKey
 from sqlalchemy.ext.declarative import declarative_base
 
+# Create a declarative base instance
 Base = declarative_base()
 
+class City(Base):
+    """
+    Class representing a City in the SQL database.
 
-class State(Base):
-    """Class for a city in Sql db
-
-    __tablename__ (str): The name of the Sql table that stores cities.
-    id (sqlalchemy.Integer): ID of the city
-    name (sqlalchemy.String): Name of the city
-    state_id (sqlalchemy.String): ID of the City's state.
+    Attributes:
+    - __tablename__ (str): The name of the SQL table that stores cities.
+    - id (sqlalchemy.Integer): ID of the city.
+    - name (sqlalchemy.String): Name of the city.
+    - state_id (sqlalchemy.String): ID of the City's state.
     """
 
     __tablename__ = "cities"
