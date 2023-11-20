@@ -16,7 +16,11 @@ from model_state import State
 from model_city import City
 
 if __name__ == "__main__":
-    username, password, database, state_name = sys.argv[1:5]
+    """
+    Check for correct arguments
+    args: Username, password, database, state_name
+    """
+    username, password, database = sys.argv[1:4]
     engine = create_engine("mysql+mysqldb://{}:{}@localhost:3306/{}"
                            .format(username, password, database),
                            pool_pre_ping=True)
