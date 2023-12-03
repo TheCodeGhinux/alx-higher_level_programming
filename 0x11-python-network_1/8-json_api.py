@@ -9,31 +9,17 @@ import requests
 import sys
 
 
-if __name__ == '__main__':
-    # Define the URL for the POST request
-    url = "http://0.0.0.0:5000/search_user"
-
+if __name__ == "__main__":
     # Extract the letter from command-line
     # arguments or set it to an empty string if not provided
-    if len(sys.argv) < 2:
-        q = ""
-    else:
-        q = sys.argv[1]
+    input_word = "" if len(sys.argv) == 1 else sys.argv[1]
+    search = {"q": input_word}
 
-    # Create a dictionary with the 'q' parameter
-    search = {'q': q}
-
-    # Send the POST request
-    req = requests.post(url, data=search)
-
+    res= requests.post("http://0.0.0.0:5000/search_user", data=search)
     try:
-        # Parse the JSON response
-        res = req.json()
+        if res.json() == {}:
+            print("No result")
+        else:
+            print("[{}] {}".format(res.json().get("id"), res.json().get("name")))
     except ValueError:
         print("Not a valid JSON")
-    else:
-        if isinstance(res, list) and len(res) < 1:
-            print('No result')
-        else:
-            # Access the 'id' and 'name' from the JSON response
-            print('[{}] {}'.format(res[0]['id'], res[0]['name']))
