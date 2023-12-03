@@ -15,7 +15,7 @@ if __name__ == "__main__":
     input_word = "" if len(sys.argv) == 1 else sys.argv[1]
     search = {"q": input_word}
 
-    res= requests.post("http://0.0.0.0:5000/search_user", data=search)
+    res = requests.post("http://0.0.0.0:5000/search_user", data=search)
     try:
         if res.json() == {}:
             print("No result")
