@@ -14,9 +14,9 @@ if __name__ == "__main__":
     """
     repo_name = sys.argv[1]
     owner_name = sys.argv[2]
-    input_url = f"https://api.github.com/repos/{owner_name}/{repo_name}/commits"
+    url = f"https://api.github.com/repos/{owner_name}/{repo_name}/commits"
 
-    res = requests.get(input_url)
+    res = requests.get(url)
     commits = res.json()
     try:
         for req in range(10):
