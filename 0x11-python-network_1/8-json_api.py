@@ -20,6 +20,7 @@ if __name__ == "__main__":
         if res.json() == {}:
             print("No result")
         else:
-            print("[{}] {}".format(res.json().get("id"), res.json().get("name")))
+            print("[{}] {}".format(res.json().get("id"),
+                                   res.json().get("name")))
     except ValueError:
         print("Not a valid JSON")
