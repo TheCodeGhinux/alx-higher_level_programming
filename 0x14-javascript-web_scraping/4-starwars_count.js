@@ -11,20 +11,10 @@ request.get(apiUrl, (error, response, body) => {
     console.error(error);
   } else {
     try {
-      // Parse the JSON response
-      const data = JSON.parse(body);
-
-      // Filter films where Wedge Antilles (character ID 18) is present
-      const result = data.results.filter((film) =>
-        film.characters.includes(
-          'https://swapi-api.alx-tools.com/api/people/18/'
-        )
+      const data = JSON.parse(body).results;
+      const result = data.filter((film) =>
+        film.characters.some((character) => character.endsWith('/18/'))
       );
-
-      // Display the number of movies
-      // console.log(
-      //   `Number of movies with Wedge Antilles: ${result.length}`
-      // )
       console.log(result.length);
     } catch (error) {
       console.error(error);

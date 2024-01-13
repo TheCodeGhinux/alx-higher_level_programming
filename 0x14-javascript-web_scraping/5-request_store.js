@@ -6,6 +6,6 @@ if (process.argv.length !== 4) {
   process.exit(1);
 }
 
-apiUrl = process.argv[2];
-filePath = process.argv[3];
+const apiUrl = process.argv[2];
+const filePath = process.argv[3];
 request(apiUrl).pipe(fs.createWriteStream(filePath));
