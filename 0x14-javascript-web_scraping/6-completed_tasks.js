@@ -1,6 +1,5 @@
 #!/usr/bin/node
 const request = require('request');
-const fs = require('fs');
 if (process.argv.length !== 3) {
   console.error('Usage: node 6-completed_tasks.js <url>');
   process.exit(1);

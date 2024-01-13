@@ -1,6 +1,5 @@
 #!/usr/bin/node
 const request = require('request');
-const fs = require('fs');
 if (process.argv.length !== 3) {
   console.error('Usage: node 101-starwars_characters.js <id>');
   process.exit(1);
